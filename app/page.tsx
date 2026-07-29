@@ -12,9 +12,8 @@ export default function Home() {
         </div>
         <Image width={1440} height={570} alt="hero" src={"/BG.svg"} />
         <FoodMenu />
-
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
