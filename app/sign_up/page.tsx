@@ -1,72 +1,9 @@
-"use client";
 import Image from "next/image";
 import bikeImg from "@/public/deliveryBike.jpg";
 
-import Link from "next/link";
-
 import BackButton from "../_components/backButton";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
-import { Formik, Field, Form, ErrorMessage } from "formik";
-
-import * as Yup from "yup";
-
-const SignupForm = () => {
-  return (
-    <Formik
-      initialValues={{ email: "" }}
-      validationSchema={Yup.object({
-        email: Yup.string()
-          .email("Invalid email. Use a format like example@email.com")
-          .required("Email is required"),
-      })}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
-    >
-      {/* 1. Pass a function to Formik to access form state */}
-      {({ isValid, dirty }) => {
-        // 2. Determine if the email is currently valid and filled out
-        const isEmailValid = isValid && dirty;
-
-        return (
-          <Form className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <Field
-                name="email"
-                type="email"
-                placeholder="Email"
-                className="border px-3 py-2 rounded-md"
-              />
-              <ErrorMessage
-                name="email"
-                component="span"
-                className="text-red-500 text-xs"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              disabled={!isEmailValid} // Optionally disable clicking when invalid
-              // 3. Conditionally set opacity (opaque when valid, 20% opacity when invalid)
-              className={`bg-black transition-opacity ${
-                isEmailValid ? "opacity-100" : "opacity-20 pointer-events-none"
-              }`}
-            >
-              Submit
-            </Button>
-          </Form>
-        );
-      }}
-    </Formik>
-  );
-};
-
+import MultiStepSignup from "../_components/multiStepSignUp";
 
 export default function SignUp() {
   return (
@@ -77,9 +14,7 @@ export default function SignUp() {
             <BackButton />
           </div>
 
-          <h1 className="font-semibold text-2xl">Create your account</h1>
-          <p>Sign up to explore your favorite dishes.</p>
-          <SignupForm />
+          <MultiStepSignup />
 
           <div className="flex justify-center gap-2">
             <p>Already have an account? </p>
