@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
@@ -9,7 +10,9 @@ export default function Header() {
     <div className="flex w-full justify-between md:px-22 md:h-17 bg-[#18181B]">
       <Image src={logoImg} alt="logo" />
       <div className="flex gap-3 items-center">
-        <Button className={"bg-white text-black"}>Sign up</Button>
+        <Link href={"/sign_up"}>
+          <Button className={"bg-white text-black"}>Sign up</Button>
+        </Link>
         <Button className={"bg-[#EF4444]"}>Log in</Button>
       </div>
     </div>
