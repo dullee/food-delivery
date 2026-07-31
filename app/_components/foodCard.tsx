@@ -1,7 +1,6 @@
 import fingerFoodImg from "@/public/finger-food.jpg";
 import Image from "next/image";
 
-
 import {
   Card,
   CardAction,
@@ -14,12 +13,15 @@ import {
 import { Button } from "@base-ui/react";
 import { Plus } from "lucide-react";
 
-export default function FoodCard() {
+function addToCart(id) {}
+
+export default function FoodCard(id: number) {
   return (
     <Card className="flex p-4">
       <div className="relative">
         <Image alt="finger food" src={fingerFoodImg} />
         <Button
+          onClick={addToCart}
           className={"absolute bottom-5 right-5 bg-white rounded-full p-3.5"}
         >
           <Plus />
