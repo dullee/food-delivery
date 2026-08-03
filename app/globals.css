@@ -128,3 +128,26 @@
     @apply font-sans;
   }
 }
+
+@keyframes fadeOutSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-toast {
+  animation: fadeOutSlide 1s ease-in-out forwards;
+}
