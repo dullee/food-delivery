@@ -4,10 +4,11 @@ import bikeImg from "@/public/deliveryBike.jpg";
 
 import BackButton from "../_components/backButton";
 
-import MultiStepSignup from "../_components/multiStepSignUp";
+import LogInForm from "../_components/logInForm";
 
-export default function SignUp() {
-  return (
+export default function Page (){
+
+    return(
     <div className="flex flex-col  items-center">
       <main className="flex w-full max-w-360 flex-row justify-between items-center md:pl-25 ">
         <div className="w-full max-w-md flex flex-col gap-6">
@@ -15,12 +16,12 @@ export default function SignUp() {
             <BackButton />
           </div>
 
-          <MultiStepSignup />
+          <LogInForm />
 
           <div className="flex justify-center gap-2">
-            <p>Already have an account? </p>
+            <p>Dont have an account? </p>
 
-            <span><Link href={"/log_in"} className="text-[#2563EB]">Log in</Link></span>
+            <span><Link href={"/sign_up"} className="text-[#2563EB]">Sign up</Link></span>
 
 
           </div>
@@ -35,3 +36,4 @@ export default function SignUp() {
     </div>
   );
 }
+

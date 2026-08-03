@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex py-8 md:gap-12 border-t text-[#71717A]">
+        <div className="flex py-8 md:gap-12 border-t text-[#71717A] border-[#404040]">
           <p>Copy right 2024 © Nomnom LLC</p>
 
           <p>Privacy policy</p>
