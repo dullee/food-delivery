@@ -3,8 +3,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, Truck } from "lucide-react";
 import { Pagination } from "@/components/ui/pagination";
-import AdminOrderInfo from "./_components/adminOrderInfo";
 import { useState } from "react";
+import AdminOrderInfo from "./_components/adminOrderInfo";
+import AdminFoodMenu from "./_components/adminFoodMenu";
 
 export default function Page() {
   const [selectedMenu, setSelectedMenu] = useState<string>("orders");
@@ -38,9 +39,11 @@ export default function Page() {
           </div>
         </div>
         <div className="mt-6 mr-10 w-full flex flex-col gap-6">
-          <div className="ml-auto">Pf picture</div>
+          <div className="ml-auto border border-black w-9 h-9 rounded-full flex justify-center items-center">
+            ?
+          </div>
           <div>
-            {selectedMenu === "orders" ? <AdminOrderInfo /> : null}
+            {selectedMenu === "orders" ? <AdminOrderInfo /> : <AdminFoodMenu />}
 
             <Pagination></Pagination>
           </div>
