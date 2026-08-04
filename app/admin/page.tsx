@@ -1,6 +1,43 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, Truck } from "lucide-react";
+import { Pagination } from "@/components/ui/pagination";
+import AdminOrderInfo,  from "../_components/adminOrderInfo";
+
+import { ColumnDef } from "@tanstack/react-table";
+
+type Payment = {
+  id: string;
+  amount: number;
+  status: "pending" | "processing" | "success" | "failed";
+  email: string;
+};
+
+export const columns: ColumnDef<Payment>[] = [
+  {
+    accessorKey: "status",
+    header: "Status",
+  },
+  {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
+    accessorKey: "amount",
+    header: "Amount",
+  },
+];
+
+async function getData(): Promise<Payment[]> {
+  // Fetch data from your API here.
+  return [
+    {
+      id: "728ed52f",
+      amount: 100,
+      status: "pending",
+      email: "m@example.com",
+    },
+  ]
 
 export default function Page() {
   return (
@@ -19,12 +56,17 @@ export default function Page() {
                 <Truck />
                 <h2 className="w-full">Orders</h2>
               </Button>
+              <div></div>
             </div>
           </div>
         </div>
-        <div className="mt-6 mr-10 w-full flex flex-col">
-          <div className="ml-auto">ORders</div>
-          <div></div>
+        <div className="mt-6 mr-10 w-full flex flex-col gap-6">
+          <div className="ml-auto">Pf picture</div>
+          <div>
+
+            <AdminOrderInfo columns={columns} data={data}/>
+            <Pagination></Pagination>
+          </div>
         </div>
       </div>
     </div>
