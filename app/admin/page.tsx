@@ -11,10 +11,10 @@ export default function Page() {
   const [selectedMenu, setSelectedMenu] = useState<string>("orders");
 
   return (
-    <div className="flex min-h-screen bg-[#F4F4F5]">
+    <div className="flex min-h-screen bg-[#F4F4F5] justify-center">
       <div className="max-w-360 flex w-full relative gap-6">
-        <div className="max-w-51.25 flex bg-white h-screen w-full">
-          <div className="fixed left-0 top-0 flex flex-col px-5 pt-9 gap-10">
+        <div className="max-w-51.25 flex bg-white h-full w-full">
+          <div className="fixed left-164 top-0 flex flex-col px-5 pt-9 gap-10">
             <div className="flex max-h-12">
               <Image alt="logo" width={165} height={44} src={"logoHDark.svg"} />
             </div>
